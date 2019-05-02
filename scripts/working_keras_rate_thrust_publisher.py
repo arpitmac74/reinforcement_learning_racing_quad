@@ -22,7 +22,7 @@ class test:
         self.joy_cb_flag = False
         self.imu_cb_flag = False
         self.attitude_thrust_pub = rospy.Publisher("/uav/input/rateThrust", RateThrust, queue_size=10)
-        self.model = load_model('my_model.h5')
+        self.model = load_model('working_model_roll_pitch_thrust.h5')
         self.model._make_predict_function()
         attitude_target_sub = rospy.Subscriber("/joy",Joy,self.joy_cb)
         attitude_target_sub = rospy.Subscriber("/uav/sensors/imu",Imu,self.imu_cb)
